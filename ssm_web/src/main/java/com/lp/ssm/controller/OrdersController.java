@@ -58,6 +58,9 @@ public class OrdersController {
         mv.setViewName("orders-show");
 
         toString();
+        toString();
+        toString();
+        toString();
 
         return mv;
 
