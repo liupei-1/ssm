@@ -81,30 +81,29 @@ public class LogAop {
                     /*if (!"/sysLog".equals(classValue[0]) && !"/findAll.do".equals(methodValue[0])) {
                         
                     }*/
-                    
-                        //拼接url（类路径+方法路径）
-                        url = classValue[0] + methodValue[0];
 
-                        //获取访问的ip
-                        String ip = request.getRemoteAddr();
+                    //拼接url（类路径+方法路径）
+                    url = classValue[0] + methodValue[0];
 
-                        //获取当前操作的用户
-                        SecurityContext context = SecurityContextHolder.getContext();//从上下文中获取了当前登入的用户
-                        User user = (User) context.getAuthentication().getPrincipal();
-                        String username = user.getUsername();
+                    //获取访问的ip
+                    String ip = request.getRemoteAddr();
 
-                        //将日志相关信息封装到SysLog对象
-                        SysLog sysLog = new SysLog();
-                        sysLog.setExecutionTime(time);
-                        sysLog.setIp(ip);
-                        sysLog.setMethod("[类名] " + clazz.getName() + "[方法名] " + method.getName());
-                        sysLog.setUrl(url);
-                        sysLog.setUsername(username);
-                        sysLog.setVisitTime(visitTime);
+                    //获取当前操作的用户
+                    SecurityContext context = SecurityContextHolder.getContext();//从上下文中获取了当前登入的用户
+                    User user = (User) context.getAuthentication().getPrincipal();
+                    String username = user.getUsername();
 
-                        //调用Service完成操作保存日志信息
-                        sysLogService.save(sysLog);
-                    
+                    //将日志相关信息封装到SysLog对象
+                    SysLog sysLog = new SysLog();
+                    sysLog.setExecutionTime(time);
+                    sysLog.setIp(ip);
+                    sysLog.setMethod("[类名] " + clazz.getName() + "[方法名] " + method.getName());
+                    sysLog.setUrl(url);
+                    sysLog.setUsername(username);
+                    sysLog.setVisitTime(visitTime);
+
+                    //调用Service完成操作保存日志信息
+                    sysLogService.save(sysLog);
 
 
                 }

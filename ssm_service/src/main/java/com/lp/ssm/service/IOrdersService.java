@@ -14,5 +14,5 @@ public interface IOrdersService {
     List<Orders> findAll(int page, int size) throws Exception;
 
     //根据id查询
-    Orders findById(String ordersId)throws Exception;
+    Orders findById(String ordersId) throws Exception;
 }

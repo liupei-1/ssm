@@ -29,10 +29,10 @@ public class Orders {
 
     public String getOrderStatusStr() {
         //订单状态(0 未支付 1 已支付)
-        if (orderStatus==0){
-            orderStatusStr="未支付";
-        }else if (orderStatus==1){
-            orderStatusStr="已支付";
+        if (orderStatus == 0) {
+            orderStatusStr = "未支付";
+        } else if (orderStatus == 1) {
+            orderStatusStr = "已支付";
         }
         return orderStatusStr;
     }
@@ -66,8 +66,8 @@ public class Orders {
     }
 
     public String getOrderTimeStr() {
-        if (orderTime!=null){
-             orderTimeStr = DateUtils.dateToString(orderTime,"yyyy-MM-dd HH:mm:ss");
+        if (orderTime != null) {
+            orderTimeStr = DateUtils.dateToString(orderTime, "yyyy-MM-dd HH:mm:ss");
         }
         return orderTimeStr;
     }
@@ -126,12 +126,12 @@ public class Orders {
 
     public String getPayTypeStr() {
         // 支付方式(0 支付宝 1 微信 2其它)
-        if (payType==0){
-            payTypeStr="支付宝";
-        }else if (payType==1){
-            payTypeStr="微信";
-        }else if (payType==2){
-            payTypeStr="其它";
+        if (payType == 0) {
+            payTypeStr = "支付宝";
+        } else if (payType == 1) {
+            payTypeStr = "微信";
+        } else if (payType == 2) {
+            payTypeStr = "其它";
         }
         return payTypeStr;
     }

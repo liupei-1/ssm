@@ -4,7 +4,6 @@ import com.lp.ssm.domain.Member;
 import com.lp.ssm.domain.Orders;
 import com.lp.ssm.domain.Product;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -40,7 +39,7 @@ public interface IOrdersDao {
             @Result(column = "orderDesc", property = "orderDesc"),
             @Result(column = "productId", property = "product", javaType = Product.class, one = @One(select = "com.lp.ssm.dao.IProductDao.findById")),
             @Result(column = "memberId", property = "member", javaType = Member.class, one = @One(select = "com.lp.ssm.dao.IMemberId.findById")),
-            @Result(column = "id", property = "travellers" ,javaType =java.util.List.class, many = @Many(select = "com.lp.ssm.dao.ITravellerDao.findByOrdersId"))
+            @Result(column = "id", property = "travellers", javaType = java.util.List.class, many = @Many(select = "com.lp.ssm.dao.ITravellerDao.findByOrdersId"))
     })
     Orders findById(String ordersId) throws Exception;
 

@@ -24,18 +24,20 @@ public class OrdersServiceImpl implements IOrdersService {
 
     /**
      * 订单表
+     *
      * @return
      * @throws Exception
      */
     @Override
     public List<Orders> findAll(int page, int size) throws Exception {
         //参数pageNum是页码值      参数pageSize是每页显示的条数
-        PageHelper.startPage(page,size);
+        PageHelper.startPage(page, size);
         return ordersDao.findAll();
     }
 
     /**
      * 根据id查询订单
+     *
      * @param ordersId
      * @return
      * @throws Exception

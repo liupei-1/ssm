@@ -2,7 +2,6 @@ package com.lp.ssm.dao;
 
 import com.lp.ssm.domain.Member;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Service;
 
 /**
  * @author LiuPei

@@ -35,5 +35,5 @@ public class permissionController {
         permissionService.save(permission);
         return "redirect:findAll.do";
     }
-    
+
 }

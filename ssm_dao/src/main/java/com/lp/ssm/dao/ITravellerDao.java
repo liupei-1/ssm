@@ -2,7 +2,6 @@ package com.lp.ssm.dao;
 
 import com.lp.ssm.domain.Traveller;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
