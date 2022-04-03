@@ -56,6 +56,9 @@ public class OrdersController {
         Orders orders = ordersService.findById(ordersId);
         mv.addObject("orders", orders);
         mv.setViewName("orders-show");
+
+        toString();
+
         return mv;
 
     }
