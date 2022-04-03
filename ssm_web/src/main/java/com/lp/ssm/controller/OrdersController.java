@@ -53,7 +53,6 @@ public class OrdersController {
     @RequestMapping("/findById.do")
     public ModelAndView findById(@RequestParam(name = "id", required = true) String ordersId) throws Exception {
         ModelAndView mv = new ModelAndView();
-        StringBuilder stringBuilder = new StringBuilder();
         Orders orders = ordersService.findById(ordersId);
         mv.addObject("orders", orders);
         mv.setViewName("orders-show");
