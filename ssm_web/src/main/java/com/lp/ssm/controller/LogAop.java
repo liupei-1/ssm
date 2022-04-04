@@ -75,15 +75,15 @@ public class LogAop {
                 if (methodAnnotation != null) {
                     String[] methodValue = methodAnnotation.value();
 
-                    // TODO: 2022/4/4  
-                    //排除不访问的RequestMapping的value
-                    // 把/sysLog排除(访问日志页面不计入到日志目录)
-                    /*if (!"/sysLog".equals(classValue[0]) && !"/findAll.do".equals(methodValue[0])) {
-                        
-                    }*/
 
                     //拼接url（类路径+方法路径）
                     url = classValue[0] + methodValue[0];
+
+                    //排除不访问的RequestMapping的value
+                    // 把/sysLog排除(访问日志页面不计入到日志目录)
+                    if ("/sysLog/findAll.do".equals(url)) {
+                        return;
+                    }
 
                     //获取访问的ip
                     String ip = request.getRemoteAddr();
@@ -104,7 +104,6 @@ public class LogAop {
 
                     //调用Service完成操作保存日志信息
                     sysLogService.save(sysLog);
-
 
                 }
             }
